@@ -9,7 +9,7 @@ module Reqres
 
   # rake files pattern to run for generating yml file
   mattr_accessor :test_files_pattern
-  @@test_files_pattern = 'test/integration/**/*_testing.rb'
+  @@test_files_pattern = 'test/integration/**/*_test.rb'
 
   # Way to setup Reqres. Add file to initializers:
   #   initializers/reqres.rb
