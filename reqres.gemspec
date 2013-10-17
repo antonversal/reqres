@@ -8,8 +8,10 @@ Gem::Specification.new do |spec|
   spec.version       = Reqres::VERSION
   spec.authors       = ["Anton Versal"]
   spec.email         = ["ant.ver@gmail.com"]
-  spec.description   = %q{YAML file generator from Request Response for fake API service}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Request and Response YAML file generator from test.}
+  spec.summary       = %q{Request and Response YAML file generator from test.
+                          Can be used for creating fake API with sinatra.
+                          And for generating API documentation.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
