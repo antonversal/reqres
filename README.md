@@ -40,6 +40,32 @@ Generated file saves to current dir, you can set this in settings:
 ```ruby
 config.file_name = File.join(Rails.root, "doc", "reqres.yml")
 ```
+
+Generated file will have structure:
+```yaml
+ManageFooTest:
+  test_creates_foo:
+    request:
+      url: http://www.example.com/v1/foos
+      full_path: /v1/foos
+      params:
+        name: Bar
+        description: FooBar
+        action: create
+        controller: v1/foos
+      method: POST
+      body: '{"name":"Bar","description":"FooBar"}'
+      headers:
+        http_authorization: Token token="14d75ec70594d026de22f02502e74be9"
+        content_type: application/json
+        accept: application/json
+    response:
+      code: '201'
+      body: '{"id":974435878,"name":"Bar","description":"FooBar"}'
+  test_getting_foo:
+    request:
+    ....
+```
 ## Contributing
 
 1. Fork it
