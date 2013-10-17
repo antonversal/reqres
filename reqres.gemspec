@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Request and Response YAML file generator from test.
                           Can be used for creating fake API with sinatra.
                           And for generating API documentation.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/antonversal/reqres"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
