@@ -19,6 +19,16 @@ And then execute:
 Or install it yourself as:
 
     $ gem install reqres
+    
+Include `Reqres::Generator` module to `ActiveSupport::TestCase` in `test_helper.rb`:
+
+```ruby
+require 'reqres/generator'
+
+class ActiveSupport::TestCase
+  include Reqres::Generator
+  ...
+```
 
 ## Usage
 
