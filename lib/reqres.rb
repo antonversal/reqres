@@ -11,6 +11,10 @@ module Reqres
   mattr_accessor :test_files_pattern
   @@test_files_pattern = 'test/integration/**/*_test.rb'
 
+  # rake files pattern to run for generating yml file
+  mattr_accessor :request_headers
+  @@request_headers = %w{HTTP_AUTHORIZATION HTTP_ACCEPT CONTENT_TYPE}
+
   # Way to setup Reqres. Add file to initializers:
   #   initializers/reqres.rb
   #

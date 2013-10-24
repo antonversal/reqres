@@ -26,19 +26,28 @@ module Reqres
              "params" => request.params.to_hash,
              "method" => request.method,
              "body" => request.body.read,
-             "headers" =>
-               {
-                 "http_authorization" => request.headers["HTTP_AUTHORIZATION"],
-                 "content_type" => request.headers["CONTENT_TYPE"],
-                 'accept' => request.headers["ACCEPT"]
-               }
+             "headers" => request_headers
            },
            "response" => {
              "code" => response.code,
-             "body" => response.body
+             "body" => response.body,
+             "headers" => response.headers
            }
          }
       }
+    end
+
+    # request.headers is ActionDispatch::Http::Headers.
+    # It can't be serialized right to yaml
+    def request_headers
+      hdrs = Reqres.request_headers
+      request.headers.inject({}) do |memo,(k,v)|
+        if hdrs.include? k
+          memo.merge(k => v)
+        else
+          memo
+        end
+      end
     end
 
     # collects data from all tests

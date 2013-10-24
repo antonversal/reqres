@@ -36,7 +36,8 @@ For generating file run:
 
     rake reqres:yaml
 
-By default for generating is used integration test but you can set a pattern in initializers:
+By default for generating is used integration test but you can set a pattern
+in initializers:
 
 ```ruby
 # initializers/reqres.rb
@@ -49,6 +50,13 @@ Generated file saves to current dir, you can set this in settings:
 
 ```ruby
 config.file_name = File.join(Rails.root, "doc", "reqres.yml")
+```
+
+You can change default request header extraction, which is
+`%w{HTTP_AUTHORIZATION HTTP_ACCEPT CONTENT_TYPE}`:
+
+```ruby
+config.request_headers = %w{HTTP_AUTHORIZATION CONTENT_TYPE}
 ```
 
 Generated file will have structure:
